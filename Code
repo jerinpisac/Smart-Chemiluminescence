@@ -1,0 +1,21 @@
+Arduino Code for Smart Chemiluminescence
+
+const int relaypin = 7;
+const int ldrpin = 10;
+
+void setup(){
+  pinMode(ldrpin, INPUT);
+  pinMode(relaypin, OUTPUT);
+}
+
+void loop(){
+  int value = analogRead(ldrpin);
+  if(value > 500)
+  {
+    digitalWrite(relayPin, HIGH);
+    delay(5000);
+    digitalWrite(relayPin, LOW);
+    delay(1000);
+  }
+  delay(1000);
+}
